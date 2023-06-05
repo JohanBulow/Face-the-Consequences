@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Face the consequences</title>
+        <link rel="stylesheet" href="css/cssresset.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/body.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/container.css">
+        <link rel="stylesheet" href="css/herobox.css">
+        <link rel="stylesheet" href="css/popup.css">
+        <link rel="icon" href="images/logo1.png" type="image/x-icon">
+        <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo1.png" alt="">
+                    </a>
+                </div>
+                <div class="signedIn" id="signedInSection" style="display: none;">
+                    <p><span class="bolder">Signed in as :</span> <span id="userName"></span></p>
+                </div>
+                <div class="dsktp-btn">
+                    <a href="#" class="myButton hide" id="dropActiveButton">Exit</a>
+                    <a href="#" class="myButton hide" id="logoutButton">Logout</a>
+                    <a href="#" class="myButton btnLogin-popup show" id="loginButton">Login</a>
+                    <a href="login.html" class="myButton hide" id="connectAcc">Connect Account</a>
+                </div>
+                <div class="mob-wrapper">
+                    <img src="images/icon-burger-menu.svg" alt="" style="width: 40px;" class="burgermenu">
+
+                    <div class="mob-nav">
+                        <a href="#" class="hide navbutton">Throwaway</a>
+                        <a href="#" class="navbutton hide" id="logoutButtonMOB">Logout</a>
+                        <a href="#" class="navbutton btnLogin-popup show" id="loginButtonMOB">Login</a>
+                        <a href="#" class="navbutton hide" id="dropActiveButtonMOB">Exit</a>
+                        <a href="login.html" class="navbutton hide" id="connectAccMOB">Connect</a>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="wrapper">
+                <div class="icon-close">
+                    <img src="images/x-symbol-svgrepo-com.svg" alt="" style="width: 20px;" class="close-icon">
+                </div>
+                <div class="form-box login">
+                    <h2>Login</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <input id="lgnName" required>
+                            <label>Name</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" id="lgnPW" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <a href="#">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn" id="lgnBtn">Login</button>
+                        <div class="login-register">
+                            <p>Dont have an account?<a href="#" class="register-link"> Register</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-box register">
+                    <h2>Registration</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <input required id="nameField">
+                            <label>Name</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" id="pwField" required>
+                            <label>Password</label>
+                        </div>
+                        <button type="submit" class="btn" id="regBtn">Create Account</button>
+                        <div class="login-register">
+                            <p>Already have an account?<a href="#" class="login-link"> Login</a></p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="popUpcontainer">
+                <div class="popup" id="successLoginPopup">
+                    <img class="check" src="images/check.png" alt="">
+                    <h6>You have succesfully logged in</h6>
+                    <p>Enjoy ur time :)</p>
+                    <button class="buttonCheck" type="button" onclick="closeSuccessLoginPopup()">Ok</button>
+                </div>
+            </div>
+            <div class="popUpcontainer">
+                <div class="popup" id="successRegisterPopup">
+                    <img class="check" src="images/check.png" alt="">
+                    <h6>You have succesfully registered an account!</h6>
+                    <p>You can proceed to log in to your account.</p>
+                    <button class="buttonCheck" type="button" onclick="closeSuccessRegisterPopup()">Ok</button>
+                </div>
+            </div>
+            <div class="popUpcontainer">
+                <div class="popup" id="dropUserPopup">
+                    <img class = "check" src="images/check.png" alt="">
+                    <h6>You have succesfully left the Room!</h6>
+                    <p>Come back any time!</p>
+                    <button class = "buttonCheck" type="button" onclick="closeDropUserPopup()">Ok</button>
+                </div>
+            </div>
+            <div class="popUpcontainer">
+                <div class="popup" id="twoManyPopup">
+                    <img src="images/error2.png" alt="">
+                    <h6>Too many requests!</h6>
+                    <p>Due to limitations of</p>
+                    <p>our API key we cant load everything</p>
+                    <p>Wait a few minutes and come right back!</p>
+                    <button type="button" onclick="closeTwoManyPopupPopup()">Ok</button>
+                </div>
+            </div>
+            <div class="popUpcontainer">
+                <div class="popup" id="BadPWPopup">
+                    <img src="images/error2.png" alt="">
+                    <h6>Cant create account!</h6>
+                    <p>Cant have an empty</p>
+                    <p>string as password!</p>
+                    <button type="button" onclick="closeBadPWPopup()">Ok</button>
+                </div>
+            </div>
+            <div class="popUpcontainer">
+                <div class="popup" id="popup">
+                    <img src="images/error2.png" alt="">
+                    <h6>Cant create account!</h6>
+                    <p>Account with that</p>
+                    <p>name already exists!</p>
+                    <button type="button" onclick="closePopup()">Ok</button>
+                </div>
+            </div>
+            <div class="popUpcontainer">
+                <div class="popup" id="LoginPopup">
+                    <img src="images/error2.png" alt="">
+                    <h6>Account doesnt exist!</h6>
+                    <p>Try creating an account</p>
+                    <p>by pressing Register.</p>
+                    <button type="button" onclick="closeLoginPopup()">Ok</button>
+                </div>
+            </div>
+            <div class="herobox">
+
+            </div>
+        </div>
+
+
+        <div class="popUpcontainer">
+            <div class="popup" id="successLoginPopup">
+                <img class="check" src="images/check.png" alt="">
+                <h6>You have succesfully logged in</h6>
+                <p>Enjoy ur time :)</p>
+                <button class="buttonCheck" type="button" onclick="closeSuccessLoginPopup()">Ok</button>
+            </div>
+        </div>
+        <div class="popUpcontainer">
+            <div class="popup" id="successRegisterPopup">
+                <img class="check" src="images/check.png" alt="">
+                <h6>You have succesfully registered an account!</h6>
+                <p>You can proceed to log in to your account.</p>
+                <button class="buttonCheck" type="button" onclick="closeSuccessRegisterPopup()">Ok</button>
+            </div>
+        </div>
+        <div class="popUpcontainer">
+            <div class="popup" id="dropUserPopup">
+                <img class = "check" src="images/check.png" alt="">
+                <h6>You have succesfully left the Room!</h6>
+                <p>Come back any time!</p>
+                <button class = "buttonCheck" type="button" onclick="closeDropUserPopup()">Ok</button>
+            </div>
+        </div>
+        <div class="popUpcontainer">
+            <div class="popup" id="twoManyPopup">
+                <img src="images/error2.png" alt="">
+                <h6>Too many requests!</h6>
+                <p>Due to limitations of</p>
+                <p>our API key we cant load everything</p>
+                <p>Wait a few minutes and come right back!</p>
+                <button type="button" onclick="closeTwoManyPopupPopup()">Ok</button>
+            </div>
+        </div>
+        <div class="popUpcontainer">
+            <div class="popup" id="noConnectionPopup">
+                <img src="images/error2.png" alt="">
+                <h6>Oh man, connection lost :(</h6> 
+            </div>
+        </div>
+        <div class="popUpcontainer">
+            <div class="popup" id="BadPWPopup">
+                <img src="images/error2.png" alt="">
+                <h6>Cant create account!</h6>
+                <p>Cant have an empty</p>
+                <p>string as password!</p>
+                <button type="button" onclick="closeBadPWPopup()">Ok</button>
+            </div>
+        </div>
+        <div class="popUpcontainer">
+            <div class="popup" id="popup">
+                <img src="images/error2.png" alt="">
+                <h6>Cant create account!</h6>
+                <p>Account with that</p>
+                <p>name already exists!</p>
+                <button type="button" onclick="closePopup()">Ok</button>
+            </div>
+        </div>
+        <div class="popUpcontainer">
+            <div class="popup" id="LoginPopup">
+                <img src="images/error2.png" alt="">
+                <h6>Account doesnt exist!</h6>
+                <p>Try creating an account</p>
+                <p>by pressing Register.</p>
+                <button type="button" onclick="closeLoginPopup()">Ok</button>
+            </div>
+        </div>
+        <div class="herobox"> </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="scripts/checkSignIn.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/getUserInfo.js"></script>
+    <script src="scripts/logInReg.js"></script>
+    <script src="scripts/exitBtn.js"></script>
+    <script src="scripts/ajaxPolling.js" type="module"></script>
+    <script src="scripts/urlhandleIndex.js"></script>
+    <script type="module">
+        import { checkForUpdates } from "./scripts/ajaxPolling.js";
+    </script>
+    </body>
+
+</html>

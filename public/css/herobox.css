@@ -1,0 +1,149 @@
+.herobox {
+    min-height: 800px;
+    max-width: 800px;
+    margin: 0 auto;
+    /*background-color: peru;*/
+    margin-top: -550px;
+}
+
+.card {
+    max-height: 175px;
+    min-height: 175px;
+    /*background-color: aqua;*/
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+    border: 2px solid black;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.leftpart {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    /*align-content: space-between;*/
+    align-items: center;
+}
+
+.userInfo {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.profPic {
+    margin-left: 20px;
+    width: 30%;
+}
+
+.profPic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+.rightPart {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.mostPlayed {
+    position: absolute;
+    bottom: -78px;
+    left: 340px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.imgWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(5px);
+    opacity: 0.8;
+    filter: brightness(100%) opacity(0.3);
+}
+
+.imgWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.mostPlayed h3 {
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.imgWrapper img {
+    width: 40px;
+    height: 40px;
+    margin-left: 35px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    z-index: 10;
+}
+
+.rankPart {
+    /*position: absolute;*/
+    top: -60px;
+    right: 320px;
+}
+
+.rankPic {
+    display: flex;
+    align-items: center;
+}
+
+.rankPic img {
+    width: 300px;
+    transform: translateY(80px);
+    height: auto;
+}
+
+.userName {
+    margin-bottom: -120px;
+    font-size: 27px;
+}
+
+.userNameAlign {
+    /*position: absolute;*/
+    top: 40px;
+    right: 545px;
+}
+
+.Align {
+    margin-left: auto;  
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+    .herobox {
+        max-width: 300px;
+        margin-top: -560px;
+    }
+    .userName {
+        font-size: 16px;
+    }
+}

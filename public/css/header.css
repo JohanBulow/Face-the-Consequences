@@ -1,0 +1,124 @@
+/* Global view */
+header {
+    background-color: rgb(60, 60, 60);
+    max-height: 100px;
+    /*position: fixed;*/
+    width: 100%;
+}
+
+.show {
+    display: inline-block;
+}
+
+.hide {
+    display: none;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+nav {
+    max-width: 1024px;
+    min-height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav .logo p span {
+    font-weight: 700;
+}
+
+.bolder {
+    font-weight: 700;
+}
+
+.myButton {
+    padding: 11px 25px;
+    border: 1px solid white;
+    text-decoration: none;
+    margin-left: 10px;
+    color: white;
+    z-index: 1000;
+}
+
+.myButton:hover {
+    transition-duration: 0.5s;
+    background-color: white;
+    font-weight: bold;
+    color: black;
+    border: 1px solid black;
+}
+
+.mob-wrapper {
+    display: none;
+}
+
+.superhide {
+    display: none !important;
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+    .hide-dsktp {
+        display: block;
+    }
+
+    header {
+        position: relative;
+    }
+
+    .dsktp-btn {
+        display: none;
+    }
+
+    .dsktp-btn a {
+        display: block;
+    }
+
+    .logo {
+        margin-left: 20px;
+    }
+
+    .myButton {
+        margin-left: 0;
+    }
+
+    .mob-wrapper {
+        display: block;
+        padding-right: 30px;
+    }
+
+    .mob-nav {
+        display: none;
+        position: absolute;
+        padding-top: 10px;
+        transform: translateY(18px);
+        z-index: 30;
+
+    }
+
+    .navbutton {
+        display: block;
+        background-color: coral;
+        padding: 15px 30px;
+        margin-left: -40px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        box-shadow: 0 0 0 2px #fff;
+        width: 60px;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
+}

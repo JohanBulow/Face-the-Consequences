@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face the consequences</title>
+    <link rel="stylesheet" href="css/cssresset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/container.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="icon" href="images/logo1.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo1.png" alt="">
+                </a>
+            </div>
+            <div class="signedIn" id="signedInSection" style="display: none;">
+                <p><span class="bolder">Signed in as :</span> <span id="userName"></span></p>
+            </div>
+            <div class="dsktp-btn">
+                <a href="#" class="myButton hide" id="dropActiveButton">Exit</a>
+                <a href="#" class="myButton" id="logoutButton" style="display: none;">Logout</a>
+                <a href="#" class="myButton btnLogin-popup" id="loginButton">Login</a>
+                <a href="login.html" class="myButton" id="connectAcc">Connect Account</a>
+            </div>
+            <div class="mob-wrapper">
+                <img src="images/icon-burger-menu.svg" alt="" style="width: 40px;" class="burgermenu">
+
+                <div class="mob-nav">
+                    <a href="#" class="hide navbutton">Throwaway</a>
+                    <a href="#" class="navbutton hide" id="logoutButtonMOB">Logout</a>
+                    <a href="#" class="navbutton btnLogin-popup show" id="loginButtonMOB">Login</a>
+                    <a href="#" class="navbutton hide" id="dropActiveButtonMOB">Exit</a>
+                    <a href="login.html" class="navbutton hide superhide" id="connectAccMOB">Connect</a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="wrapper">
+            <div class="icon-close">
+                <img src="images/x-symbol-svgrepo-com.svg" alt="" style="width: 20px;" class="close-icon">
+            </div>
+
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <input id="lgnName" required>
+                        <label>Name</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="lgnPW" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn" id="lgnBtn">Login</button>
+                    <div class="login-register">
+                        <p>Dont have an account?<a href="#" class="register-link"> Register</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-box register">
+                <h2>Regestration</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <input required id="nameField">
+                        <label>Name</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="pwField" required>
+                        <label>Password</label>
+                    </div>
+                    <button type="submit" class="btn" id="regBtn">Create Account</button>
+                    <div class="login-register">
+                        <p>Already have an account?<a href="#" class="login-link"> Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="popUpcontainer">
+            <div class="popup" id="accountAddedPopup">
+                <img class="check" src="images/check.png" alt="">
+                <h6>Account succesfully connected!</h6>
+                <p></p>
+                <button class="buttonCheck" type="button" onclick="closeAccountAddedPopup()">Ok</button>
+            </div>
+        </div>
+        <div class="popUpcontainer">
+            <div class="popup" id="accountRemovedPopup">
+                <img class="check" src="images/check.png" alt="">
+                <h6>Account succesfully disconnected!</h6>
+                <p></p>
+                <button class="buttonCheck" type="button" onclick="closeAccountRemovedPopup()">Ok</button>
+            </div>
+        </div>
+        
+        <div class="popUpcontainer">
+            <div class="popup" id="noAccountAddedPopup">
+                <img src="images/error2.png" alt="">
+                <h6>Cant disconnect account!</h6>
+                <p>There is no league account</p>
+                <p>connected with this account</p>
+                <button type="button" onclick="closeNoAccountAddedPopup()">Ok</button>
+            </div>
+        </div>
+        <div class="popUpcontainer">
+            <div class="popup" id="connectPopup">
+                <img src="images/error2.png" alt="">
+                <h6>Cant connect account!</h6>
+                <p>This account is already</p>
+                <p>connected with another</p>
+                <p>League account</p>
+                <button type="button" onclick="closeConnectPopup()">Ok</button>
+            </div>
+        </div>
+        <div class="login-container">
+            <div class="uploadPic">
+                <div class="card">
+                    <h2>Edit profile</h2>
+                    <h1 id="userNamePlaceholder" style="display: none;"></h1>
+                    <div class="columnText">
+                        <h1>Connected to : &nbsp;</h1>
+                        <h1 id="summonerNamePlaceholder">no one :(</h1>
+                    </div>
+                    <img src="images/user-placeholder.svg" id="profile-pic">
+                    <label class="picLabel" style = "display: none;" onclick="updateProfilePic()">Update image</label>
+                    <h3>Connect LoL Account</h3>
+                    <div class="loginOverhead">
+                        <div class="loginContainer">
+                            <form action="#">
+                                <div class="input-box-login">
+                                    <input id="myInput" required>
+                                    <label>Summoner name</label>
+                                </div>
+                            </form>
+                            <div class="selectBox">
+                                <select name="format" id="format">
+                                    <option selected disabled>Select server</option>
+                                    <option value="euw">EUW</option>
+                                    <option value="eune">EUNE</option>
+                                    <option value="na">NA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <button type="submit" class="syncBtn" id="myButton">Connect Account</button>
+                            <button type="submit" class="syncBtn" id="dropAcc">Remove Account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/uploadImg.js"></script>
+    <script src="scripts/sendInfo.js"></script>
+    <script src="scripts/logInReg.js"></script>
+    <script src="scripts/checkSignIn.js"></script>
+    <script src="scripts/showName.js"></script>
+    <script src="scripts/urlhandleLogin.js"></script>
+    <script src="scripts/redirectRestricted.js"></script>
+    <script src="scripts/displaySummonerName.js"></script>
+</body>
+
+</html>

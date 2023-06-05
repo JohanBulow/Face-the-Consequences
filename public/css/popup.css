@@ -1,0 +1,71 @@
+.popUpcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    width: 225px;
+    height: 200px;
+    background-color: lightgray;
+    border-radius: 6px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    position: absolute;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 100;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 40%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h6 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 15px 0 12px;
+}
+
+.popup button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 0;
+    background: rgb(22, 110, 164);
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.popup .buttonCheck {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 0;
+    background: greenyellow;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
